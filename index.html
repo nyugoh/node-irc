@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en_US">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Awesome Chat app</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="/public/chat.css">
+	</head>
+	<body>
+		<div class="container" id="main"><br>
+			<div class="well well-sm text-center row">
+			  <h3 class="text-primary col-sm-10">Node.js Web IRC </h3><h4 class="col-sm-2" id="time"></h4>
+			</div>
+			<!-- Sidebar contains list of people online -->
+			<div class="col-sm-3">
+				<div class="panel panel-info">
+				  <div class="panel-heading">
+				    <h3 class="panel-title">Who's Online <span class="budge" id="totalOnline"></span></h3>
+				  </div>
+				  <div class="panel-body">
+				    <ul class="list-group" id="online">
+				      <a class="list-group-item" href="#">Bot</a>
+
+				    </ul>
+				  </div>
+				  <div class="panel-footer">
+				    <span class="glyphicon glyphicon-user"></span> <span id="username"></span>
+				  </div>
+				</div>
+			</div>
+			<!-- End of sidebar -->
+			<div class="col-sm-9">
+				<div class="panel panel-default">
+				  <div id="message-box" class="panel-body">
+					  <div id="feedback">
+
+					  </div>
+				  </div>
+				  <div class="panel-footer clearfix">
+					  <form class="form" id="login-form">
+					  	<input type="text" id="name" class="input-box" name="name" value="" placeholder="Choose a nick name ...">
+					  </form>
+					  <form class="form hidden" id="message-form">
+					  	<input type="text" id="message" class="input-box" name="message" value="" placeholder="Type a message ...">
+					  </form>
+					  <div id="status-bar">
+						  <p class="pull-right">user is typing</p>
+					  </div>
+
+				  </div>
+				</div>
+			</div>
+		</div>
+		<!-- jQuery -->
+		<script src="//code.jquery.com/jquery.js"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<script src="/public/socket.io.js"></script>
+ 		<script src="/public/client.js"></script>
+
+	</body>
+</html>
