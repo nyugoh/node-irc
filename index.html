@@ -16,10 +16,10 @@
 			  <h3 class="text-primary col-sm-10">Node.js Web IRC </h3><h4 class="col-sm-2" id="time"></h4>
 			</div>
 			<!-- Sidebar contains list of people online -->
-			<div class="col-sm-3">
+			<div class="col-sm-3" id="sidebar">
 				<div class="panel panel-info">
 				  <div class="panel-heading">
-				    <h3 class="panel-title">Who's Online <span class="budge" id="totalOnline"></span></h3>
+				    <h3 class="panel-title">Who's Online <span class="badge" id="totalOnline"></span></h3>
 				  </div>
 				  <div class="panel-body">
 				    <ul class="list-group" id="online">
@@ -35,17 +35,36 @@
 			<!-- End of sidebar -->
 			<div class="col-sm-9">
 				<div class="panel panel-default">
-				  <div id="message-box" class="panel-body">
-					  <div id="feedback">
+					<div role="tabpanel" id="tabs-box">
+						<!-- Nav tabs -->
+						<ul class="nav nav-tabs" role="tablist">
+							<li role="presentation" class="active">
+								<a href="#home" aria-controls="home" role="tab" data-toggle="tab">Free Node</a>
+							</li>
+							<li role="presentation">
+								<a href="#tab" aria-controls="tab" role="tab" data-toggle="tab">Inbox</a>
+							</li>
+						</ul>
 
-					  </div>
-				  </div>
+						<!-- Tab panes -->
+						<div class="tab-content">
+							<div role="tabpanel" class="tab-pane active" id="home">
+								<div id="message-box" class="panel-body">
+									<div id="feedback"></div>
+								</div>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="tab">
+								inbox
+							</div>
+						</div>
+					</div>
+
 				  <div class="panel-footer clearfix">
 					  <form class="form" id="login-form">
-					  	<input type="text" id="name" class="input-box" name="name" value="" placeholder="Choose a nick name ...">
+					  	<input type="text" id="name" autocomplete="off" autofocus="on" class="input-box" name="name" value="" placeholder="Choose a nick name ...">
 					  </form>
 					  <form class="form hidden" id="message-form">
-					  	<input type="text" id="message" class="input-box" name="message" value="" placeholder="Type a message ...">
+					  	<input type="text" id="message" autocomplete="off" autofocus="on" class="input-box" name="message" value="" placeholder="Type a message ...">
 					  </form>
 					  <div id="status-bar">
 						  <p class="pull-right">user is typing</p>
